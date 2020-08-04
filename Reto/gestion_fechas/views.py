@@ -49,7 +49,7 @@ def l(request):
         fecha = Fechas.objects.filter(nombre__contains = nombre).values('fecha_nacimiento')    
         if Fechas.objects.filter(nombre__contains = nombre):
 
-            return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre,'cod':1})
+            return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre})
         
         else: 
 
@@ -57,7 +57,7 @@ def l(request):
 
             return HttpResponse(mensaje)
 
-        return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre,'cod':0}) 
+        return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre}) 
     
     elif request.GET['id']:
 
@@ -66,7 +66,7 @@ def l(request):
         nombre = Fechas.objects.filter(id__contains = id).values('nombre')
         if Fechas.objects.filter(id__contains = id):
 
-            return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre,'cod':1})
+            return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre})
         
         else: 
 
@@ -74,7 +74,7 @@ def l(request):
 
             return HttpResponse(mensaje)
 
-        return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre,'cod':1})
+        return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre})
 
     elif request.GET['fecha']:
 
@@ -85,10 +85,10 @@ def l(request):
             mensaje = 'Ingrese formato de fecha valido'
             return HttpResponse(mensaje)
         nombre = Fechas.objects.filter(fecha_nacimiento__contains = fecha).values('nombre')
-
+        fecha = Fechas.objects.filter(fecha_nacimiento__contains = fecha).values('fecha_nacimiento')
         if Fechas.objects.filter(fecha_nacimiento__contains = fecha):
 
-            return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre,'cod':2})
+            return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre})
         
         else: 
 
@@ -101,7 +101,7 @@ def l(request):
 
         return HttpResponse(mensaje)
     
-    return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre,'cod':2})
+    return render(request,'l.html', {'fecha_nacimiento':fecha,'nombre':nombre})
 
 def actualizar(request):  
 

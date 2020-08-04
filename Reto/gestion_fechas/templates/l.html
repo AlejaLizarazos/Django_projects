@@ -1,7 +1,7 @@
 <html>
-  Nombre: {% for nombre in nombre %}{{nombre.nombre}} {%
-  endfor %}<br />
-  Fecha de Nacimiento: {% for fecha in fecha_nacimiento
+  Nombre: {% for nombre in nombre %}{{nombre.nombre}} {% endfor %}<br />
+  Fecha de Nacimiento: {% for fecha in fecha_nacimiento %}{{fecha.fecha_nacimiento}}
+  {% endfor %}
   
   <br />
   <form action="/read/" method="GET">
