@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <h1 style = 'color: red'> Búsqueda en base de datos</h1>
+    </head>
+
+    <body>
+        <form action = '/buscar/' method = 'GET'>
+            <h2>C (create)</h2>
+            <ilabel type = 'nombre'>Nombre: </ilabel><br>
+            <input type = 'text' name = 'buscar'>
+            <input type = 'submit' value = 'buscar'>
+            
+            <ilabel type = 'nombre'>Fecha nacimiento: </ilabel><br>
+            <input type = 'text' name = 'buscar'>
+            <input type = 'submit' value = 'buscar'>
+        </form>
+        <form action = '/editar/' method = 'GET'>
+            <h2>R (read)</h2>
+            <input type = 'text' name = 'editar'>
+            <input type = 'submit' value = 'editar'>
+        </form>
+        <form action = '/actualizar/' method = 'GET'>
+            <h2>U (update)</h2>
+            <input type = 'text' name = 'actualizar'>
+            <input type = 'submit' value = 'actualizar'>
+        </form>
+        <form action = '/eliminar/' method = 'GET'>
+            <h2>D (delete)</h2>
+            <input type = 'text' name = 'eliminar'>
+            <input type = 'submit' value = 'eliminar'>
+        </form>
+    </body>
+</html>
